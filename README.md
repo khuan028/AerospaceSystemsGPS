@@ -1,5 +1,7 @@
 # Aerospace Systems GPS Tracking System
 
+![alt text](Thumbnail.png "Preview of GPS Interface")
+
 This is a functioning GPS tracking system for U.C. Riverside's Aerospace System's upcoming rocket prototype. The project includes a graphical user interface and the Arduino code.
 Features include:
 
