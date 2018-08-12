@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Use correct character set. -->
+    <meta charset="utf-8">
+    <!-- Tell IE to use the latest, best version. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>AS Command Center</title>
+    <!-- The Cesium library. -->
+    <script src="ThirdParty/Cesium/Cesium.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <style>
+        @import url(ThirdParty/Cesium/Widgets/widgets.css);
+    </style>
+    <link rel="stylesheet" href="index.css" media="screen">
+</head>
+
+<body>
+
+    <!-- Top navigation bar -->
+    <div id="topbar">
+        <span style="float:left">
+            <h1>The Command Center</h1>
+        </span>
+        <span style="float:right">
+            <h1>Rocket Interface</h1>
+        </span>
+
+        <a href="http://localhost:3000/">
+            <img id="as-logo" src="Assets/logo-gray.png">
+        </a>
+    </div>
+
+    <div style="height: 20px;"></div>
+
+    <div style="width: 85%; margin-left: auto; margin-right: auto">
+
+        <div id="left-panel">
+            <!-- A container for the Cesium Viewer to live in. -->
+            <div id="cesiumContainer"></div>
+            <button id="map-center-button">Center</button>
+        </div>
+
+        <div id="right-panel">
+            <!-- Terminal -->
+            <div id="messages-container">
+                <ul id="messages"></ul>
+            </div>
+            <form id="cmd_line" action="">
+                <input id="m" autocomplete="off" autofocus="autofocus" />
+            </form>
+
+            <div id="gps-panel">
+                <h2>GPS Data</h2>
+                <hr>
+                <p>
+                    <strong>Latitude:</strong>
+                    <span id="gps-lat">---</span>
+                </p>
+                <p>
+                    <strong>Longitude:</strong>
+                    <span id="gps-lon">---</span>
+                </p>
+                <p>
+                    <strong>Altitude:</strong>
+                    <span id="gps-alt">---</span>
+                </p>
+                <p>
+                    <strong>Time:</strong>
+                    <span id="gps-time">---</span>
+                </p>
+                <p>
+                    <strong>Satellites:</strong>
+                    <span id="gps-sat">---</span>
+                </p>
+                <p>
+                    <strong>Precision:</strong>
+                    <span id="gps-prec">---</span>
+                </p>
+                <p id="gps-frames-container">
+                    <strong>Recorded Frames:</strong>
+                    <span id="gps-frames">0</span>
+                </p>
+                <button id="copy-button">Copy to clipboard</button>
+                <button id="record-button">Record</button>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <!-- Our application code. -->
+    <script src="Source/App.js"></script>
+
+</body>
+
+</html>
